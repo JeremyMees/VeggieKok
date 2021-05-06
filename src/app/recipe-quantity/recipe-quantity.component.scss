@@ -1,0 +1,58 @@
+$light-blue: #6dd5dc;
+$light-grey: #f2f2f2;
+$drop-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 0.5);
+
+.image-container {
+  width: 70%;
+  height: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.5em;
+  max-width: 400px;
+  box-shadow: $drop-shadow;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.container-qauntity {
+  box-shadow: $drop-shadow;
+  width: 70%;
+  height: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+  max-width: 400px;
+}
+
+.quantity-top {
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+  text-align: center;
+  background-color: $light-blue;
+}
+
+.quantity-content {
+  background-color: $light-grey;
+
+  border-radius: 0 0 10px 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-left {
+  width: 70%;
+  padding: 0.5em 0 0.5em 0.5em;
+}
+
+.flex-right {
+  width: 30%;
+  padding: 0.5em 0.5em 0 0.5em;
+}

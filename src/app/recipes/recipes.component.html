@@ -1,0 +1,106 @@
+<div class="container">
+  <form class="form">
+    <mat-form-field class="form-field">
+      <mat-label
+        ><mat-icon aria-hidden="false" aria-label="search icon"
+          >search</mat-icon
+        >
+        Recept</mat-label
+      >
+      <input
+        type="text"
+        placeholder="Kies een recept"
+        aria-label="Recipe"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <div class="gallery-item-content">
+        <div class="image-container">
+          <img
+            class="gallery-image"
+            src="../../assets/test.jpg"
+            alt="tattoo of chinese dog"
+          />
+          <div class="overlay">
+            <p class="text">
+              Moeilijkheid: Makkelijk <br />
+              Duur : 60min
+            </p>
+          </div>
+        </div>
+        <p>Testing</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-item-content">
+        <div class="image-container">
+          <img
+            class="gallery-image"
+            src="../../assets/test.jpg"
+            alt="tattoo of chinese dog"
+          />
+          <div class="overlay">
+            <p class="text">
+              Moeilijkheid: Makkelijk <br />
+              Duur : 60min
+            </p>
+          </div>
+        </div>
+        <p>Testing</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-item-content">
+        <div class="image-container">
+          <img
+            class="gallery-image"
+            src="../../assets/test.jpg"
+            alt="tattoo of chinese dog"
+          />
+          <div class="overlay">
+            <p class="text">
+              Moeilijkheid: Makkelijk <br />
+              Duur : 60min
+            </p>
+          </div>
+        </div>
+        <p>Testing</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-item-content">
+        <div class="image-container">
+          <img
+            class="gallery-image"
+            src="../../assets/test.jpg"
+            alt="tattoo of chinese dog"
+          />
+          <div class="overlay">
+            <p class="text">
+              Moeilijkheid: Makkelijk <br />
+              Duur : 60min
+            </p>
+          </div>
+        </div>
+        <p>Testing</p>
+      </div>
+    </div>
+  </div>
+</div>

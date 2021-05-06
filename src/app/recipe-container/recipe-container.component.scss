@@ -1,0 +1,41 @@
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+}
+
+.flexbox-item-left {
+  width: 30%;
+  height: 100%;
+}
+
+.flexbox-item-middle {
+  width: 55%;
+  height: 100%;
+}
+
+.flexbox-item-right {
+  width: 15%;
+  height: 100%;
+  padding: 1em;
+}
+
+.placeholder {
+  background-color: yellow;
+  height: 800px;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .flexbox-item-left {
+    width: 100%;
+  }
+
+  .flexbox-item-middle {
+    width: 100%;
+  }
+
+  .flexbox {
+    flex-direction: column;
+  }
+}

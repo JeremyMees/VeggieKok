@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "veggiekok-232c4": {
+      "hosting": {
+        "veggieKok": [
+          "veggiekok-232c4"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <form class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Recept naam</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Favorite food</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="difficulty">
+        <mat-option
+          *ngFor="let difficulty of difficultys"
+          [value]="difficulty.value"
+        >
+          {{ difficulty.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Duur</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </form>
+</div>
