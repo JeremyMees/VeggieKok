@@ -1,25 +1,25 @@
 <div class="image-container">
-  <img src="../../assets/test.jpg" alt="lukewarm freekehsalad with halloumi" />
+  <img src="{{ recipe.image }}" alt="{{ recipe.name }}" />
 </div>
 
 <div class="container-qauntity">
-  <div class="quantity-top">INGREDIENTEN VOOR 4 PERSONEN</div>
+  <div class="quantity-top">
+    <b>{{ persons }}</b> PERSONEN
+
+    <button (click)="lesPersons()" class="left-button">
+      <mat-icon aria-hidden="false" aria-label="minus icon">remove</mat-icon>
+    </button>
+    <button (click)="morePersons()">
+      <mat-icon aria-hidden="false" aria-label="plus icon">add</mat-icon>
+    </button>
+  </div>
   <div class="quantity-content">
-    <div class="flex">
-      <div class="flex-left">Spinazie</div>
-      <div class="flex-right">140 g</div>
-    </div>
-    <div class="flex">
-      <div class="flex-left">Spinazie</div>
-      <div class="flex-right">140 g</div>
-    </div>
-    <div class="flex">
-      <div class="flex-left">Spinazie</div>
-      <div class="flex-right">140 g</div>
-    </div>
-    <div class="flex">
-      <div class="flex-left">Spinazie</div>
-      <div class="flex-right">140 g</div>
+    <div class="flex" *ngFor="let ingredient of recipe.ingredients">
+      <div class="flex-left">{{ ingredient.ingredient }}</div>
+
+      <div class="flex-right" [hidden]="ingredient?.quantity == ''">
+        {{ ingredient?.quantity * persons }} {{ ingredient?.extra }}
+      </div>
     </div>
   </div>
 </div>

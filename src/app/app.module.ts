@@ -21,12 +21,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AddComponent } from './admin/add/add.component';
+import { AdminContainerComponent } from './admin/admin-container/admin-container.component';
+import { DeleteComponent } from './admin/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,8 @@ import { AddComponent } from './admin/add/add.component';
     RecipesContainerComponent,
     FooterComponent,
     AddComponent,
+    AdminContainerComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,8 @@ import { AddComponent } from './admin/add/add.component';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    MatButtonModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAnalyticsModule,

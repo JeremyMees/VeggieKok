@@ -1,12 +1,84 @@
 <div class="container">
-  <form class="form">
-    <mat-form-field class="full-width">
+  <form
+    class="form"
+    (ngSubmit)="
+      onSubmit({
+        name: name.value,
+        description: description.value,
+        difficulty: difficulty.value,
+        time: time.value,
+        image: image.files[0],
+        steps: [
+          step1.value,
+          step2.value,
+          step3.value,
+          step4.value,
+          step5.value,
+          step6.value,
+          step7.value,
+          step8.value
+        ],
+        ingredients: [
+          {
+            ingredient: ingredient1.value,
+            extra: ingredient1extra.value,
+            quantity: ingredient1quantity.value
+          },
+          {
+            ingredient: ingredient2.value,
+            extra: ingredient2extra.value,
+            quantity: ingredient2quantity.value
+          },
+          {
+            ingredient: ingredient3.value,
+            extra: ingredient3extra.value,
+            quantity: ingredient3quantity.value
+          },
+          {
+            ingredient: ingredient4.value,
+            extra: ingredient4extra.value,
+            quantity: ingredient4quantity.value
+          },
+          {
+            ingredient: ingredient5.value,
+            extra: ingredient5extra.value,
+            quantity: ingredient5quantity.value
+          },
+          {
+            ingredient: ingredient6.value,
+            extra: ingredient6extra.value,
+            quantity: ingredient6quantity.value
+          },
+          {
+            ingredient: ingredient7.value,
+            extra: ingredient7extra.value,
+            quantity: ingredient7quantity.value
+          },
+          {
+            ingredient: ingredient8.value,
+            extra: ingredient8extra.value,
+            quantity: ingredient8quantity.value
+          }
+        ]
+      })
+    "
+  >
+    <mat-form-field class="half-width">
       <mat-label>Recept naam</mat-label>
-      <input matInput />
+      <input matInput #name required />
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Favorite food</mat-label>
-      <mat-select [(ngModel)]="selectedValue" name="difficulty">
+    <mat-form-field class="half-width">
+      <mat-label>Korte omschrijving</mat-label>
+      <input matInput #description required />
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Moeilijkheid</mat-label>
+      <mat-select
+        [(ngModel)]="selectedValue"
+        name="difficulty"
+        #difficulty
+        required
+      >
         <mat-option
           *ngFor="let difficulty of difficultys"
           [value]="difficulty.value"
@@ -15,9 +87,170 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field class="full-width">
+    <mat-form-field class="half-width">
       <mat-label>Duur</mat-label>
-      <input matInput />
+      <input matInput placeholder="minuten" #time required />
     </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 1</mat-label>
+      <input matInput #ingredient1 required />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 1 hoeveelheid</mat-label>
+      <input matInput #ingredient1quantity required />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 1 bijvoegsel</mat-label>
+      <input
+        matInput
+        #ingredient1extra
+        required
+        placeholder="ml, cl, gr, el ..."
+      />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 2</mat-label>
+      <input matInput #ingredient2 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 2 hoeveelheid</mat-label>
+      <input matInput #ingredient2quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 2 bijvoegsel</mat-label>
+      <input matInput #ingredient2extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 3</mat-label>
+      <input matInput #ingredient3 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 3 hoeveelheid</mat-label>
+      <input matInput #ingredient3quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 3 bijvoegsel</mat-label>
+      <input matInput #ingredient3extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 4</mat-label>
+      <input matInput #ingredient4 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 4 hoeveelheid</mat-label>
+      <input matInput #ingredient4quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 4 bijvoegsel</mat-label>
+      <input matInput #ingredient4extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 5</mat-label>
+      <input matInput #ingredient5 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 5 hoeveelheid</mat-label>
+      <input matInput #ingredient5quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 5 bijvoegsel</mat-label>
+      <input matInput #ingredient5extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 6</mat-label>
+      <input matInput #ingredient6 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 6 hoeveelheid</mat-label>
+      <input matInput #ingredient6quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 6 bijvoegsel</mat-label>
+      <input matInput #ingredient6extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 7 </mat-label>
+      <input matInput #ingredient7 r />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 7 hoeveelheid</mat-label>
+      <input matInput #ingredient7quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 7 bijvoegsel</mat-label>
+      <input matInput #ingredient7extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 8</mat-label>
+      <input matInput #ingredient8 />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 8 hoeveelheid</mat-label>
+      <input matInput #ingredient8quantity />
+    </mat-form-field>
+    <mat-form-field class="third-width">
+      <mat-label>Ingredient 8 bijvoegsel</mat-label>
+      <input matInput #ingredient8extra placeholder="ml, cl, gr, el ..." />
+    </mat-form-field>
+
+    <button
+      class="btn full-width"
+      mat-button
+      type="button"
+      (click)="openInput()"
+      aria-label="Button with image icon"
+    >
+      <mat-icon>image</mat-icon>
+    </button>
+    <input
+      id="fileInput"
+      hidden
+      type="file"
+      name="file"
+      accept=".png, .jpeg, .jpg"
+      #image
+      required
+    />
+
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 1</mat-label>
+      <textarea matInput #step1 required></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 2</mat-label>
+      <textarea matInput #step2></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 3</mat-label>
+      <textarea matInput #step3></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 4</mat-label>
+      <textarea matInput #step4></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 5</mat-label>
+      <textarea matInput #step5></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 6</mat-label>
+      <textarea matInput #step6></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 7</mat-label>
+      <textarea matInput #step7></textarea>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <mat-label>Recept stap 8</mat-label>
+      <textarea matInput #step8></textarea>
+    </mat-form-field>
+    <button
+      class="btn full-width"
+      mat-button
+      type="submit"
+      aria-label="Button with plus icon"
+    >
+      <mat-icon>add</mat-icon> Voeg recept toe aan database
+    </button>
   </form>
 </div>

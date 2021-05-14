@@ -1,0 +1,10 @@
+<div class="button-row">
+  <button mat-raised-button (click)="seeAdd()">Add recipe</button>
+  <button mat-raised-button (click)="seeDelete()">Delete recipe</button>
+</div>
+<app-add (newRecipe)="addNewRecipe($event)" [hidden]="!add"></app-add>
+<app-delete
+  (delete)="deleteOldRecipe($event)"
+  [recipes]="recipes"
+  [hidden]="!delete"
+></app-delete>

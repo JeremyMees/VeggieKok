@@ -1,33 +1,16 @@
-<h1>Veggie test ding</h1>
-<h2>Perfect middagmaal</h2>
+<h1>{{ recipe.name }}</h1>
+<h2>{{ recipe.description }}</h2>
 <div class="info">
-  <div class="info-item">Duur: 20min</div>
-  <div class="info-item">Budget: laag</div>
-  <div class="info-item">Moeilijkheid: makkelijk</div>
+  <div class="info-item">Duur: {{ recipe.time }} min</div>
+  <div class="info-item">Moeilijkheid: {{ recipe.difficulty }}</div>
 </div>
 <h2 class="recipe">Bereiding</h2>
 
 <ol>
-  <li>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-  </li>
-  <li>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil magni rem
-    earum quia cupiditate deleniti sit quod illo ipsa ea?
-  </li>
-  <li>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus,
-    incidunt.
-  </li>
-  <li>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde amet
-    temporibus quis quae voluptas enim fuga, eos, quasi eligendi consequuntur,
-    mollitia maiores commodi officiis obcaecati pariatur accusantium deserunt
-    dolorem optio.
-  </li>
-  <li>Lorem ipsum dolor sit amet.</li>
+  <li *ngFor="let step of recipe.steps">{{ step }}</li>
 </ol>
+
+<h1 class="centerd">Deel dit recept</h1>
 
 <share-buttons
   class="socials"
@@ -35,9 +18,30 @@
   [include]="['facebook', 'twitter', 'messenger', 'whatsapp', 'email', 'copy']"
   [show]="9"
   [size]="1"
-  [url]="'https://www.eduforbetterment.com/generate-qr-code-in-angular/'"
-  [image]="
-    'https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg'
-  "
+  [url]="'{{route}}'"
+  [image]="'{{recipe.image}}'"
   [autoSetMeta]="false"
 ></share-buttons>
+
+<div class="recipes">
+  <h1 class="center">Nieuwste recepten</h1>
+  <div class="gallery">
+    <mat-card
+      class="card"
+      *ngFor="let recipe of recipes"
+      (click)="selectedRecipe(recipe.id)"
+    >
+      <img
+        mat-card-image
+        src="{{ recipe.image }}"
+        alt="{{ recipe.name }}"
+        class="image"
+      />
+      <mat-card-content>
+        <p>
+          <b>{{ recipe.name }}</b>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

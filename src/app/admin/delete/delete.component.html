@@ -1,0 +1,23 @@
+<div class="gallery">
+  <mat-card class="card" *ngFor="let recipe of recipes">
+    <img
+      mat-card-image
+      src="{{ recipe.image }}"
+      alt="image of {{ recipe.name }}"
+    />
+    <mat-card-content>
+      <p>
+        {{ recipe.name }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="deleteRecipe(recipe.name)"
+      >
+        delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

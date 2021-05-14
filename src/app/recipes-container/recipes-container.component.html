@@ -1,1 +1,11 @@
-<app-recipes></app-recipes>
+<app-recipes
+  *ngIf="!recipe"
+  [recipes]="recipes"
+  (chosenRecipe)="showDetailsRecipe($event)"
+></app-recipes>
+<app-recipe-container
+  (selected)="showDetailsRecipe($event)"
+  [recipe]="recipe"
+  [recipes]="newestRecipes"
+  *ngIf="recipe"
+></app-recipe-container>

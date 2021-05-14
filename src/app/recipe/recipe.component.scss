@@ -9,6 +9,7 @@ $drop-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 0.5);
 
 .recipe {
   color: $light-blue;
+  margin-top: 1rem;
 }
 
 ol {
@@ -38,5 +39,45 @@ li::before {
 }
 
 .socials {
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.image {
+  object-fit: cover;
+  min-height: 80%;
+  max-height: 80%;
+}
+
+.card {
+  max-width: 250px;
+  max-height: 250px;
+  margin: 0.5rem;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.recipes {
+  border: 2px solid $light-grey;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.center {
+  text-align: center;
+  color: $light-blue;
+  padding: 1rem;
+}
+
+.centerd {
   text-align: center;
 }

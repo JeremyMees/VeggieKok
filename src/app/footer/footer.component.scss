@@ -1,7 +1,14 @@
+$light-grey: #f2f2f2;
+
 footer {
-  display: block;
-  width: 100%;
-  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   text-align: center;
-  margin-top: 2em;
+  border: 2px solid $light-grey;
+  background-color: #fff;
+}
+
+.icon {
+  height: 30px;
+  padding: 0.5rem;
 }

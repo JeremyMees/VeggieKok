@@ -27,80 +27,20 @@
   </form>
 
   <div class="gallery">
-    <div class="gallery-item">
-      <div class="gallery-item-content">
-        <div class="image-container">
-          <img
-            class="gallery-image"
-            src="../../assets/test.jpg"
-            alt="tattoo of chinese dog"
-          />
-          <div class="overlay">
-            <p class="text">
-              Moeilijkheid: Makkelijk <br />
-              Duur : 60min
-            </p>
-          </div>
-        </div>
-        <p>Testing</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-item-content">
-        <div class="image-container">
-          <img
-            class="gallery-image"
-            src="../../assets/test.jpg"
-            alt="tattoo of chinese dog"
-          />
-          <div class="overlay">
-            <p class="text">
-              Moeilijkheid: Makkelijk <br />
-              Duur : 60min
-            </p>
-          </div>
-        </div>
-        <p>Testing</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-item-content">
-        <div class="image-container">
-          <img
-            class="gallery-image"
-            src="../../assets/test.jpg"
-            alt="tattoo of chinese dog"
-          />
-          <div class="overlay">
-            <p class="text">
-              Moeilijkheid: Makkelijk <br />
-              Duur : 60min
-            </p>
-          </div>
-        </div>
-        <p>Testing</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-item-content">
-        <div class="image-container">
-          <img
-            class="gallery-image"
-            src="../../assets/test.jpg"
-            alt="tattoo of chinese dog"
-          />
-          <div class="overlay">
-            <p class="text">
-              Moeilijkheid: Makkelijk <br />
-              Duur : 60min
-            </p>
-          </div>
-        </div>
-        <p>Testing</p>
-      </div>
-    </div>
+    <mat-card
+      class="card"
+      *ngFor="let recipe of recipes"
+      (click)="selectedRecipe(recipe)"
+    >
+      <img mat-card-image src="{{ recipe.image }}" alt="{{ recipe.name }}" />
+      <mat-card-content>
+        <p>
+          <b>{{ recipe.name }}</b>
+          <br />
+          Moeilijkheid: {{ recipe.difficulty }} <br />
+          Duur: {{ recipe.time }} minuten
+        </p>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
